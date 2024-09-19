@@ -20,7 +20,9 @@ def Number_Generator():
 
     numbers =[]
 
+    file = open("ki.txt", "w", encoding="utf-8")
     for i in range(how_many_numbers):
         number = random.randint(from_where, to_where)
-        numbers.append(number)
+        file.write(f"{number};")
+    file.close()
 Number_Generator()
