@@ -2,28 +2,28 @@ import random
 
 def Number_Generator():
 
-    good = True
+    not_usable = True
 
-    while good:
+    while not_usable:
         try:
             how_many_numbers = int(input("Please enter how many numbers you want to generate: "))
-            good = False
-        except: good = True
+            not_usable = False
+        except: not_usable = True
         try:
-            from_where = int(input("Please enter the minimum number: "))
-            good = False
-        except: good = True
+            min_number = int(input("Please enter the minimum number: "))
+            not_usable = False
+        except: not_usable = True
         try:
-            to_where = int(input("Please enter the maximum number: "))
-            good = False
-        except: good = True
-
-    numbers =[]
+            max_number = int(input("Please enter the maximum number: "))
+            not_usable = False
+        except: not_usable = True
 
     file = open("ki.txt", "a", encoding="utf-8")
+
     for i in range(how_many_numbers):
-        number = random.randint(from_where, to_where)
+        number = random.randint(min_number, max_number)
         file.write(f"{number};")
+        
     file.close()
-    print("Numbers were generated!\n-----------------------")
-    
+
+Number_Generator()
