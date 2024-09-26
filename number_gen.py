@@ -18,7 +18,7 @@ def Number_Generator():
             not_usable = False
         except: not_usable = True
 
-    file = open("ki.txt", "a", encoding="utf-8")
+    file = open("ki.txt", "w", encoding="utf-8")
 
     for i in range(how_many_numbers):
         number = random.randint(min_number, max_number)
