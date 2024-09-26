@@ -10,8 +10,7 @@ def Number_Check():
     for line in lines:
         parts = line.strip().split(";")
         for part in parts:
-            number = part
-            numbers.append(number)
+            numbers.append(part)
 
     not_usable = True
 
