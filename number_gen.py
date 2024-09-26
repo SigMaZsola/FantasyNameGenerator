@@ -18,11 +18,16 @@ def Number_Generator():
             not_usable = False
         except: not_usable = True
 
+    numbers = ""
+
     file = open("ki.txt", "w", encoding="utf-8")
 
     for i in range(how_many_numbers):
         number = random.randint(min_number, max_number)
-        file.write(f"{number};")
+        numbers += str(number)
+        numbers += ";"
+
+    file.write(numbers[slice(-1)])
         
     file.close()
 

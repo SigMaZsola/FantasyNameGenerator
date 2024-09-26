@@ -12,7 +12,6 @@ def Number_Check():
         for part in parts:
             number = part
             numbers.append(number)
-    numbers = numbers[slice(-1)]
 
     not_usable = True
 
