@@ -24,7 +24,7 @@ def text_check():
     checked_words = []
 
     for num in words:
-        if pieces == num:
+        if pieces == len(words):
             checked_words.append(num)
     print(checked_words)
     print("Words were checked")

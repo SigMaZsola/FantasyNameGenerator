@@ -1,35 +1,35 @@
 import random
 import importlib
-
-def name_gen():
+def text_gen():
     print("Welcome to random letter generator!!!\n-----------------------------------")
     print("1-Random 20 letters\n2-Fantasy name generator")
     choice = int(input("What do you want to generate?"))
-    rnd = ""
-    letters = "abcdefghijklmnopuqrstwvxyz"
-
-    generated_word = ""
+    
+    
     
     if choice == 1:
-        word_numbers = int(input("How many words do you want to generate?"))
-        
-        for word in range(word_numbers):
-            word_length = random.randrange(1,20)
-            for letter in range(word_length):
-                generated_word += random.choice(letters) 
-            rnd += generated_word.capitalize() +";"
-            generated_word = ""
-        f = open("ki.txt", "w", encoding="utf-8")
-        f.write(rnd[:-1])
-        print("Letters were generated!\n-----------------------")
-        module = importlib.import_module("main")
-        module.main()
+        name_gen()
     elif choice == 2:
         sex = int(input("1-Male\n2-Female"))
         fate = int(input("1-Good\n2-Evil"))
         fantasy(sex, fate)
 
-
+def name_gen():
+    rnd = ""
+    letters = "abcdefghijklmnopuqrstwvxyz"
+    word_numbers = int(input("How many words do you want to generate?"))
+    generated_word = ""
+    for word in range(word_numbers):
+        word_length = random.randrange(1,20)
+        for letter in range(word_length):
+            generated_word += random.choice(letters) 
+        rnd += generated_word.capitalize() +";"
+        generated_word = ""
+    f = open("ki.txt", "w", encoding="utf-8")
+    f.write(rnd[:-1])
+    print("Letters were generated!\n-----------------------")
+    module = importlib.import_module("main")
+    module.main()
 
 def fantasy(sex, fate):
     good_msh = "vdfhlnpt"

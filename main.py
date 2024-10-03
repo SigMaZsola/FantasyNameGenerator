@@ -1,4 +1,4 @@
-from name_generator import name_gen
+from name_generator import text_gen
 from number_gen import Number_Generator
 from number_check import Number_Check
 from text_check import text_check
@@ -23,7 +23,7 @@ def main():
         if selected == 1:
             Number_Generator()
         if selected == 2:
-            name_gen()
+            text_gen()
         if selected == 3:
             Number_Check()
         if selected == 4:

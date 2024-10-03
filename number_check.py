@@ -30,6 +30,7 @@ def Number_Check():
     for num in numbers:
         if int(num) >= min_num and int(num) <= max_num:
             checked_numbers.append(num)
+    print(checked_numbers)
     print("Numbers were checked")
     print("------------------------------")
     module = importlib.import_module("main")
