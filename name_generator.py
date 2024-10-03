@@ -4,9 +4,7 @@ def text_gen():
     print("Welcome to random letter generator!!!\n-----------------------------------")
     print("1-Random 20 letters\n2-Fantasy name generator")
     choice = int(input("What do you want to generate?"))
-    
-    
-    
+
     if choice == 1:
         name_gen()
     elif choice == 2:

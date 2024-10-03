@@ -2,7 +2,8 @@ from name_generator import text_gen
 from number_gen import Number_Generator
 from number_check import Number_Check
 from text_check import text_check
-
+from check import Check
+from sorting import Sort
 def main():
     #Változók felvétele
     is_number_generated = False
@@ -14,8 +15,8 @@ def main():
     while type == False:
     #Kivételek lekezelése
         try: 
-            selected = int(input("1.-Number generator\n2.-Name generator\n3.-Check numbers\n4.-Check names\n5.-EXIT\n"))
-            if selected <5:
+            selected = int(input("1.-Number generator\n2.-Name generator\n3.-Check numbers\n4.-Check names\n5.-Check\n6.-Sort \n7.-EXIT\n"))
+            if selected <8:
                 type = True
         except:
             type = False
@@ -29,7 +30,10 @@ def main():
         if selected == 4:
             text_check()
         if selected == 5:
+            Check()
+        if selected == 6:
+            Sort()
+        if selected == 7:
             break
-if __name__ == main():
-    main()
+main()
 
