@@ -1,4 +1,6 @@
 import random
+import importlib
+
 def name_gen():
     print("Welcome to random letter generator!!!\n-----------------------------------")
     print("1-Random 20 letters\n2-Fantasy name generator")
@@ -20,10 +22,14 @@ def name_gen():
         f = open("ki.txt", "w", encoding="utf-8")
         f.write(rnd[:-1])
         print("Letters were generated!\n-----------------------")
+        module = importlib.import_module("main")
+        module.main()
     elif choice == 2:
         sex = int(input("1-Male\n2-Female"))
         fate = int(input("1-Good\n2-Evil"))
         fantasy(sex, fate)
+
+
 
 def fantasy(sex, fate):
     good_msh = "vdfhlnpt"
@@ -55,3 +61,5 @@ def fantasy(sex, fate):
         print(generated_name.capitalize())
         generated_name = ""
     print("Names were generated!\n-----------------------")
+    module = importlib.import_module("main")
+    module.main()

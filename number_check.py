@@ -1,5 +1,6 @@
-def Number_Check():
+import importlib
 
+def Number_Check():
 
     file = open("ki.txt", "r", encoding=("utf-8"))
     lines = file.readlines()
@@ -29,5 +30,7 @@ def Number_Check():
     for num in numbers:
         if int(num) >= min_num and int(num) <= max_num:
             checked_numbers.append(num)
-    print(checked_numbers)
-Number_Check()
+    print("Numbers were checked")
+    print("------------------------------")
+    module = importlib.import_module("main")
+    module.main()

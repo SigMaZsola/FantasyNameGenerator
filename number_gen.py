@@ -1,5 +1,5 @@
 import random
-
+import importlib
 def Number_Generator():
 
     not_usable = True
@@ -30,5 +30,8 @@ def Number_Generator():
     file.write(numbers[slice(-1)])
         
     file.close()
-
-Number_Generator()
+    print("Numbers were generated!\n-----------------------")
+    module = importlib.import_module("main")
+    module.main()
+    
+    
