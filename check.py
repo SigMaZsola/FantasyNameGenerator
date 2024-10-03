@@ -1,6 +1,31 @@
-def Check():
+def Num(numbers):
+    isAllNums = False
+    for number in numbers:
+        try:
+            number = int(number)
+            if number == int(number):
+                isAllNums = True
+        except:
+            print("There are strings between the intigers!")
+            isAllNums = False
+            break
+    if isAllNums:
+        print("The datas are numbers")
 
-    value = False
+def Txt(texts):
+    isAllTexts = False
+    for text in texts:
+        try:
+            text = int(text)
+            if text == int(text):
+                print("There are intigers between the strings!")
+                isAllTexts = False
+                break
+        except:
+            isAllTexts = True
+    if isAllTexts:
+        print("The datas are texts")
+def Check():
 
     file = open("ki.txt", "r", encoding=("utf-8"))
     lines = file.readlines()
@@ -12,15 +37,11 @@ def Check():
         parts = line.strip().split(";")
         for part in parts:
             data.append(part)
-    for d in data:
         try:
-            if d == int(d):
-                value = True
+            data[0] = int(data[0])
+            if data[0] == int(data[0]):
+                Num(data)
         except:
-            if d == str(d):
-                value = False
-    if value:
-        print("The datas are numbers")
-    else:
-        print("The datas are texts")
+            if data[0] == str(data[0]):
+                Txt(data)
 Check()
