@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("GENERATOR 2000")
         self.showFullScreen()
-
+        self.numbergenbtn = QPushButton("Number generator")
         self.textgenbtn = QPushButton("Text generator")
         self.checknumberbtn = QPushButton("Check numbers")
         self.checknamesbtn = QPushButton("Check names")
@@ -25,13 +25,13 @@ class MainWindow(QMainWindow):
         self.sortbtn = QPushButton("Sort")
         self.exitbtn = QPushButton("EXIT")  
 
-        numbergenbtn.clicked.connect(self.numbergen)
-        textgenbtn.clicked.connect(self.textgen)
-        checknumberbtn.clicked.connect(self.numbercheck)
-        checknamesbtn.clicked.connect(self.namecheck)
-        checkallbtn.clicked.connect(self.allcheck)
-        sortbtn.clicked.connect(self.sorting)
-        exitbtn.clicked.connect(self.exit_app)
+        self.numbergenbtn.clicked.connect(self.numbergen)
+        self.textgenbtn.clicked.connect(self.textgen)
+        self.checknumberbtn.clicked.connect(self.numbercheck)
+        self.checknamesbtn.clicked.connect(self.namecheck)
+        self.checkallbtn.clicked.connect(self.allcheck)
+        self.sortbtn.clicked.connect(self.sorting)
+        self.exitbtn.clicked.connect(self.exit_app)
 
     def numbergen(self):
         Number_Generator()

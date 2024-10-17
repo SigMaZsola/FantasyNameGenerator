@@ -15,7 +15,7 @@ def main():
     while type == False:
     #Kivételek lekezelése
         try: 
-            selected = int(input("1.-Number generator\n2.-Name generator\n3.-Check numbers\n4.-Check names\n5.-Check\n6.-Sort \n7.-EXIT\n"))
+            selected = int(input("1.-Number generator\n2.-Name generator\n3.-Check numbers\n4.-Check text\n5.-Check\n6.-Sort \n7.-EXIT\n"))
             if selected <8:
                 type = True
         except:

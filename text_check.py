@@ -1,5 +1,7 @@
 import importlib
 
+approved = False
+
 def text_check():
 
     file = open("ki.txt", "r", encoding=("utf-8"))
@@ -25,8 +27,13 @@ def text_check():
 
     for num in words:
         if pieces == len(words):
-            checked_words.append(num)
-    print(checked_words)
+            aproved = True
+        else:
+            approved = False
+    if aproved:
+        print("The texts did match with the given parameter.")
+    else:
+        print("The texts did not match with the given parameter.")
     print("Words were checked")
     print("------------------------------")
     module = importlib.import_module("main")

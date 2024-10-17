@@ -25,12 +25,18 @@ def Number_Check():
             not_usable = False
         except: not_usable = True
     
-    checked_numbers = []
+    approved_numbers = []
+    declined_numbers = []
 
     for num in numbers:
         if int(num) >= min_num and int(num) <= max_num:
-            checked_numbers.append(num)
-    print(checked_numbers)
+            approved_numbers.append(num)
+        else:
+            declined_numbers.append(num)
+
+    print(f"These numbers matched the given range: {approved_numbers}")
+    print(f"These numbers didn't matched the given range: {declined_numbers}")
+
     print("Numbers were checked")
     print("------------------------------")
     module = importlib.import_module("main")

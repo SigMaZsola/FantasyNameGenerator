@@ -26,8 +26,7 @@ def name_gen():
     f = open("ki.txt", "w", encoding="utf-8")
     f.write(rnd[:-1])
     print("Letters were generated!\n-----------------------")
-    module = importlib.import_module("main")
-    module.main()
+    backToMenu()
 
 def fantasy(sex, fate):
     good_msh = "vdfhlnpt"
@@ -37,8 +36,9 @@ def fantasy(sex, fate):
     good_mgh = "eéiíú"
     bad_mgh = "auo"
     generated_name = ""
-    name_length = random.randint(6,20)
+    
     for i in range(10):
+        name_length = random.randint(6,20)
         while(len(generated_name) < name_length//2):
             rgs = random.choice(good_msh)
             rgh = random.choice(good_mgh)
@@ -47,17 +47,24 @@ def fantasy(sex, fate):
             if sex == 1:
                 if rgh in woman or rgs in woman or rbh in woman or rbs in woman:
                     if fate == 1:
-                        generated_name += rgs + rgh
+                        generated_name += random.choice(good_mgh) + random.choice(good_msh)
                     elif fate == 2:
-                        generated_name += rbs + rbh
+                        generated_name += random.choice(bad_mgh) + random.choice(bad_msh)
             elif sex == 2:
                 if rgh in man or rgs in man or rbh in man or rbs in man:
                     if fate == 1:
                         generated_name += random.choice(good_mgh) + random.choice(good_msh)
                     elif fate == 2:
                         generated_name += random.choice(bad_mgh) + random.choice(bad_msh)
-        print(generated_name.capitalize())
+        backwards = random.randint(0,2)
+        if backwards == 0:
+            print(generated_name.capitalize())
+        else:
+            print(generated_name[::-1].capitalize())
         generated_name = ""
     print("Names were generated!\n-----------------------")
+    backToMenu()
+
+def backToMenu():
     module = importlib.import_module("main")
     module.main()

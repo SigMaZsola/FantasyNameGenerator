@@ -1,4 +1,5 @@
 from sorting import Sort
+
 def New_data():
     def Data_type(dType):
         try:
