@@ -20,11 +20,13 @@ def name_gen():
     for word in range(word_numbers):
         word_length = random.randrange(1,20)
         for letter in range(word_length):
-            generated_word += random.choice(letters) 
+            generated_word += random.choice(letters)
         rnd += generated_word.capitalize() +";"
         generated_word = ""
     f = open("ki.txt", "w", encoding="utf-8")
+    
     f.write(rnd[:-1])
+    f.close()
     print("Letters were generated!\n-----------------------")
     backToMenu()
 
@@ -68,3 +70,5 @@ def fantasy(sex, fate):
 def backToMenu():
     module = importlib.import_module("main")
     module.main()
+
+

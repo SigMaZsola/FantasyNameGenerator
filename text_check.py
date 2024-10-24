@@ -27,12 +27,12 @@ def text_check():
 
     for num in words:
         if pieces == len(words):
-            aproved = True
+            approved = True
         else:
             approved = False
-    if aproved:
+    if approved == True:
         print("The texts did match with the given parameter.")
-    else:
+    elif approved == False:
         print("The texts did not match with the given parameter.")
     print("Words were checked")
     print("------------------------------")
